@@ -1,3 +1,5 @@
+
+
 /*============================================================================
   Ajax the add to cart experience by revealing it in a side drawer
   Plugin Documentation - http://shopify.github.io/Timber/#ajax-cart
@@ -335,7 +337,7 @@ var ajaxCart = (function(module, $) {
     $body.on('click', '.ajaxcart__qty-adjust', function() {
       var el = $(this),
           id = el.data('id'),
-          qtySelector = el.siblings('.ajaxcart__qty-num'),
+         $qtySelector = $el.closest('.ajaxcart__qty').find('.ajaxcart__qty-num'),
           qty = parseInt(qtySelector.val().replace(/\D/g, ''));
 
       var qty = validateQty(qty);
